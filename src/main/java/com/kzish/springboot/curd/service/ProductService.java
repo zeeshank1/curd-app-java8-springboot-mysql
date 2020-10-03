@@ -29,19 +29,19 @@ public class ProductService {
         return productRepository.findById(id).orElse(null);
     }
 
-//    public Product getProductByName(String name){
-//        return productRepository.findByName(name);
-//    }
+    public Product getProductByName(String name){
+        return productRepository.findByName(name);
+    }
 
     public String deleteProduct(int id){
         productRepository.deleteById(id);
         return "Product deleted !! "+ id;
     }
 
-//    public Product updateProduct(Product product){
-//        Product existingProduct = productRepository.findAllById(product.getId()).orElse(null);
-//        existingProduct.setName(product.getName());
-//        existingProduct.setQuantity(product.getQuantity());
-//        return null;
-//    }
+    public Product updateProduct(Product product){
+        Product existingProduct = productRepository.findAllById(product.getId()).orElse(null);
+        existingProduct.setName(product.getName());
+        existingProduct.setQuantity(product.getQuantity());
+        return null;
+    }
 }
